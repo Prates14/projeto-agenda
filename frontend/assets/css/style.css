@@ -54,6 +54,15 @@ body {
   margin: 10px 0;
 }
 
+.session-main h1 > span {
+  cursor: pointer;
+}
+
+.session-main h1 > span:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(51, 51, 51, 1);
+}
+
 .session-main p {
   font-style: italic;
 }
