@@ -4,6 +4,17 @@
     <section class="session-main">
       <h1>Fomulário de Login</h1>
       <p>Entre ou cadastre sua conta!</p>
+
+      <div class="formulario">
+        <form action="login/perfil" method="post">
+          <label>Seu email:</label>
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <input type="email" name="email" class="form-inputs" placeholder="seuEmail@email.com">
+          <label>Sua senha:</label>
+          <input type="password" name="email" class="form-inputs">
+          <div><button type="submit">ENTRAR</button></div>
+        </form>
+      </div>
     </section>
 
 <%- include('includes/footer'); %>
