@@ -38,33 +38,52 @@ body {
   font-weight: 700;
 }
 
-/*.nav-container .list-main .list-content .list-item .item {} */
+.troca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  position: absolute;
+  left: 66%;
+  top: 15%;
+  cursor: pointer;
+}
+
+.troca p {
+  margin: 0;
+}
+
+.troca p:first-child {
+  font-size: 0.7em;
+}
+
+.troca p:last-child {
+  font-size: 3em;
+}
+
+.troca:hover + .session-main h1>span {
+  text-shadow: 0 0 10px rgba(51, 51, 51, 1);
+}
+
 .session-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 4rem auto;
-  width: 50%;
+  width: 60%;
   font-size: 2em;
 }
 
 .session-main h1 {
   text-decoration: solid underline;
+  line-height: normal;
   margin: 10px 0;
-}
-
-.session-main h1 > span {
-  cursor: pointer;
-}
-
-.session-main h1 > span:hover {
-  cursor: pointer;
-  text-shadow: 0 0 10px rgba(51, 51, 51, 1);
 }
 
 .session-main p {
   font-style: italic;
+  line-height: normal;
 }
 
 .session-main figure {
