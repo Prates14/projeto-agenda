@@ -1,12 +1,16 @@
 <%- include('includes/head'); %>
   <%- include('includes/nav'); %>
     <div class="troca">
-      <p>cadastrar</p>
-      <p>↩</p>
+      <p id="toggle-form">
+        <%= trocaFormulario %>
+      </p>
+      <p id="trocar">↺</p>
     </div>
-    
+
     <section class="session-main">
-      <h1>Fomulário de <span>Login</span></h1>
+      <h1>Fomulário de <span id="form-title">
+          <%= tipoFormulario %>
+        </span></h1>
       <p>Entre ou cadastre sua conta!</p>
 
       <div class="formulario">
@@ -16,9 +20,11 @@
           <input type="email" name="email" class="form-inputs" placeholder="seuEmail@email.com">
           <label>Sua senha:</label>
           <input type="password" name="email" class="form-inputs">
-          <div><button type="submit">ENTRAR</button></div>
+          <div><button type="submit" id="form-button">
+              <%= tipoBotao %>
+            </button></div>
         </form>
       </div>
     </section>
 
-<%- include('includes/footer'); %>
+    <%- include('includes/footer'); %>
