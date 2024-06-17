@@ -8,6 +8,7 @@ route.get('/', homeController.index);
 
 //rotas de login
 route.get('/login', loginController.login);
+route.post('/login/register', loginController.register);
 
 //solicitação rotas contato
 //route.get('/contato', contatoController.paginaInicial);

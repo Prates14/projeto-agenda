@@ -14,12 +14,12 @@
       <p>Entre ou cadastre sua conta!</p>
 
       <div class="formulario">
-        <form action="login/perfil" method="post">
+        <form action="login/register" method="post">
           <label>Seu email:</label>
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <input type="email" name="email" class="form-inputs" placeholder="seuEmail@email.com">
           <label>Sua senha:</label>
-          <input type="password" name="email" class="form-inputs">
+          <input type="password" name="senha" class="form-inputs">
           <div><button type="submit" id="form-button">
               <%= tipoBotao %>
             </button></div>
