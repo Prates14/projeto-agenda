@@ -24,7 +24,10 @@ exports.register = async function (req, res) {
             req.flash('errors', register.errors);
             //Salvar a sessão e redirecionar de volta a pagina anterior
             req.session.save(function () {
-                return res.redirect('back');
+                if (!res.headersSent) {
+                    console.log(res)
+                    res.redirect('back');
+                }
             });
             return;
         }
@@ -32,12 +35,18 @@ exports.register = async function (req, res) {
         //Configurar mensagens flash para sucesso
         req.flash('success', 'Seu usuário foi criado com sucesso!');
         req.session.save(function () {
-            return res.redirect('back');
+            if (!res.headersSent) {
+                console.log(res)
+                res.redirect('back');
+            }
         });
+        return;
 
     } catch (error) {
         console.log(error);
-        return res.render('err404');
+        if (!res.headersSent) {
+            return res.render('err404');
+        }
     }
 
 }

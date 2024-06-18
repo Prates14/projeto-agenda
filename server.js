@@ -18,8 +18,7 @@ const routes = require('./routes'); //rotas da aplicação
 const path = require('path'); //trabalhar com caminhos
 const helmet = require('helmet'); //helmet para configurar adequadamente o cabeçalho http para melhorar a segurança
 const csrf = require('csurf'); //CSRF cria um token de segurança para fomrulários/solicitações
-const { middlewareCsrfError, middlewareCsrfToken } = require('./src/middlewares/middlewareCsrf'); //middlewares para o pacote CSRF
-const { middlewareLocal } = require('./src/middlewares/middlewareLocal'); //middlewares locals para paginas
+const { middlewareCsrfError, middlewareCsrfToken, middlewareLocal } = require('./src/middlewares/middlewareCsrf'); //middlewares para o pacote CSRF
 
 app.use(helmet()); //apenas use e pronto
 app.use(express.urlencoded({ extended: true })); //tratamento do method = POST (sem isso o post é undefined)

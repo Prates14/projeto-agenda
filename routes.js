@@ -10,7 +10,4 @@ route.get('/', homeController.index);
 route.get('/login', loginController.login);
 route.post('/login/register', loginController.register);
 
-//solicitação rotas contato
-//route.get('/contato', contatoController.paginaInicial);
-
 module.exports = route;
