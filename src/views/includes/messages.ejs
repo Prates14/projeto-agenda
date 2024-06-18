@@ -1,0 +1,19 @@
+<% if(errors > 0) { %>
+    <div class="message-container">
+        <% errors.forEach(erro => { %>
+            <p class="erro">
+                <%= erro %>
+            </p>
+        <% }); %>
+    </div>
+<% } %>
+
+<% if(errors = 0) { %>
+    <div class="message-container">
+        <% success.forEach(success => { %>
+            <p class="success">
+                <%= success %>
+            </p>
+        <% }); %>
+    </div>
+<% } %>

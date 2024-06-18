@@ -18,7 +18,12 @@ class Register {
     async result() {
         this.valida();
         if(this.errors.length > 0) return;
-        this.user = await RegisterModel.create(this.body);
+        
+        try {
+            this.user = await RegisterModel.create(this.body);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     valida() {

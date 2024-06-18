@@ -92,9 +92,28 @@ body {
   width: 90%;
 }
 
+.message-container {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.message-container .erro {
+  background-color: rgb(255, 110, 110);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.3em;
+}
+
+.message-container .success {
+  background-color: rgb(115, 255, 110);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.4em;
+}
+
 .formulario {
   width: 100%;
-  margin-top: 2rem;
   padding: 40px;
   box-shadow: inset 0 0 5px 0 black;
 }
