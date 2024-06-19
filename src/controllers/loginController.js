@@ -18,7 +18,7 @@ exports.register = async function (req, res) {
         //esperar pela validação dos dados e uso do BD.
         await register.result();
 
-        //Caso tenha erro. mensaegns temporarias flash() serao realizadas
+        //Caso tenha erro. mensagens temporarias flash() serao realizadas
         if (register.errors.length > 0) {
             //Salvar a sessão e redirecionar de volta a pagina anterior
             req.session.save(function () {
@@ -27,14 +27,14 @@ exports.register = async function (req, res) {
             //Configurar mensagens flash para erros
             req.flash('errors', register.errors);
             return;
+        } else {
+            //Configurar mensagens flash para sucesso
+            req.session.save(function () {
+                return res.redirect('back');
+            });
+            req.flash('success', 'Seu usuário foi criado com sucesso!');
+            return;
         }
-
-        //Configurar mensagens flash para sucesso
-        req.session.save(function () {
-            return res.redirect('back');
-        });
-        req.flash('success', 'Seu usuário foi criado com sucesso!');
-        return;
 
     } catch (error) {
         res.render('err404');
