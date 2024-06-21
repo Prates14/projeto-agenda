@@ -25,6 +25,9 @@ app.use(express.urlencoded({ extended: true })); //tratamento do method = POST (
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public'))); //para arquivos estaticos
 
+//Detectar ambiente (produção || desenvolvimento)
+const isProduction = process.env.NODE_ENV === 'production';
+
 //criando sessão
 const sessionOptions = session({
     secret: 'Posso colocar qualquer coisa aqui',
@@ -33,7 +36,7 @@ const sessionOptions = session({
     saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        secure: true,
+        secure: isProduction, // true em produção, false em desenvolvimento
         httpOnly: true
     }
 });

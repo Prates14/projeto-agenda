@@ -20,21 +20,20 @@ exports.register = async function (req, res) {
 
         //Caso tenha erro. mensagens temporarias flash() serao realizadas
         if (register.errors.length > 0) {
-            //Salvar a sessão e redirecionar de volta a pagina anterior
-            req.session.save(function () {
-                return res.redirect('back');
-            });
             //Configurar mensagens flash para erros
             req.flash('errors', register.errors);
-            return;
-        } else {
-            //Configurar mensagens flash para sucesso
+            //Salvar a sessão e redirecionar de volta a pagina anterior
             req.session.save(function () {
-                return res.redirect('back');
+                return res.redirect('/login');
             });
-            req.flash('success', 'Seu usuário foi criado com sucesso!');
             return;
         }
+        //Configurar mensagens flash para sucesso
+        req.flash('success', 'Seu usuário foi criado com sucesso!');
+        req.session.save(function () {
+            return res.redirect('/login');
+        });
+        return;
 
     } catch (error) {
         res.render('err404');

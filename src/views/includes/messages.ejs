@@ -1,4 +1,4 @@
-<% if(errors > 0) { %>
+<% if(errors.length > 0) { %>
     <div class="message-container">
         <% errors.forEach(erro => { %>
             <p class="erro">
@@ -8,7 +8,7 @@
     </div>
 <% } %>
 
-<% if(errors = 0) { %>
+<% if(errors.length == 0) { %>
     <div class="message-container">
         <% success.forEach(success => { %>
             <p class="success">
