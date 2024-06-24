@@ -15,12 +15,12 @@ document.getElementById('trocar').addEventListener('click', function () {
     if (formTitle.innerText === 'Login') {
         formTitle.innerText = 'Cadastro';
         formButton.innerText = 'CADASTRAR';
-        toggleFormText.innerText = 'entrar';
-        action.setAttribute('action', '/login/register');
+        toggleFormText.innerText = 'login';
+        action.setAttribute('action', '/formlogin/register');
     } else {
         formTitle.innerText = 'Login';
         formButton.innerText = 'ENTRAR';
         toggleFormText.innerText = 'cadastrar';
-        action.setAttribute('action', '/login/profile');
+        action.setAttribute('action', '/formlogin/profile');
     }
 });

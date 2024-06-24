@@ -16,7 +16,7 @@
       <%- include('includes/messages'); %>
 
         <div class="formulario">
-          <form action="/login/profile" method="post" id="toggle-action">
+          <form action="/formlogin/profile" method="post" id="toggle-action">
             <label>Seu email:</label>
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>
             <input type="email" name="email" class="form-inputs" placeholder="seuEmail@email.com">
