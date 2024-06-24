@@ -64,7 +64,7 @@ exports.login = async function (req, res) {
         req.flash('success', 'Seja bem vindo!');
         req.session.user = register.user;
         req.session.save(function () {
-            return res.redirect('/formlogin');
+            res.render('account');
         });
         return;
 

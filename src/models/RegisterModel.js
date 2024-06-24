@@ -16,7 +16,7 @@ class Register {
         this.user = null;
     }
 
-    //Login do usuario
+    //Login do usuario (validação)
     async loginResult() {
         //validando inputs
         this.valida();

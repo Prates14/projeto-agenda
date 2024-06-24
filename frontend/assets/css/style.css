@@ -26,6 +26,12 @@ body {
   color: white;
 }
 
+.nav-container .list-main .list-content{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 .nav-container .menu,
 .nav-container .list-main .list-content,
 .item {
@@ -100,14 +106,14 @@ body {
 
 .message-container .erro {
   background-color: rgb(255, 110, 110);
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.3em;
 }
 
 .message-container .success {
   background-color: rgb(115, 255, 110);
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.4em;
 }

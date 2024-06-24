@@ -1,8 +1,8 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import './assets/css/style.css';
-import './assets/img/lista-contato.png';
+import '/frontend/assets/css/style.css';
+import '/frontend/assets/img/lista-contato.png';
 
 document.getElementById('trocar').addEventListener('click', function () {
     // Obter os elementos do DOM
