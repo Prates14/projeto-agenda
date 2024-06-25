@@ -10,8 +10,8 @@ route.get('/', homeController.index);
 //rotas de login|cadastro
 route.get('/formlogin', loginController.formLogin);
 route.post('/formlogin/register', loginController.register);
-//rotas de login e perfil
+//rotas de login/logout e perfil
 route.post('/formlogin/profile', loginController.login);
-route.get('/formlogin/profile', (req, res) => res.render('account'));
+route.get('/formlogin/logout', loginController.logout);
 
 module.exports = route;

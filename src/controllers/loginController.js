@@ -2,6 +2,7 @@ const Register = require('../models/RegisterModel');
 
 //rota pagina login
 exports.formLogin = (req, res) => {
+    if(req.session.user) return res.render('account');
     res.render('formlogin', {
         tipoFormulario: 'Login',
         tipoBotao: 'ENTRAR',
@@ -64,7 +65,7 @@ exports.login = async function (req, res) {
         req.flash('success', 'Seja bem vindo!');
         req.session.user = register.user;
         req.session.save(function () {
-            res.render('account');
+            res.redirect('/formlogin');
         });
         return;
 
@@ -72,5 +73,10 @@ exports.login = async function (req, res) {
         res.render('err404');
         console.log(error);
     }
+}
 
+//função responsável pelo logout do usuario.
+exports.logout = function(req, res) {
+    req.session.destroy();
+    res.redirect('back');
 }

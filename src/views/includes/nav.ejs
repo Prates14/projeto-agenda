@@ -3,18 +3,20 @@
 
     <div class="list-main">
         <ul class="list-content">
-            <li class="list-item">
-                <a class="item" href="formlogin/profile">LISTA</a>
-            </li>
             <% if(!user) { %>
-            <li class="list-item">
-                <a class="item" href="formlogin">ENTRAR</a>
-            </li>
-            <% } %>
-            <% if(user) { %>
-            <li class="list-item">
-                <a class="item" href="formlogin">SAIR</a>
-            </li>
+                <li class="list-item">
+                    <a class="item" href="/formlogin">ENTRAR</a>
+                </li>
+            <% } else { %>
+                <li class="list-item">
+                    <a class="item" href="/contato/index">ADICIONAR CONTATO</a>
+                </li>
+                <li class="list-item">
+                    <a class="item" href="/formlogin">LISTA</a>
+                </li>
+                <li class="list-item">
+                    <a class="item" href="/formlogin/logout">SAIR</a>
+                </li>
             <% } %>
         </ul>
     </div>
